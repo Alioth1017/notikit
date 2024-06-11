@@ -9,7 +9,7 @@
     "notikit": "dist/cli.js"
   },
   "scripts": {
-    "build": "vite build && tsup",
+    "build": "vite build && tsup && tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish --any-branch"
   },
   "keywords": [
