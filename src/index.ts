@@ -4,14 +4,13 @@ import { WebhookNotification } from "./notification/webhook";
 export type NotificationActionOptions = {
   type: "wecom";
   botKey: string;
-  message: string;
 };
 
 export class NotificationAction {
   constructor(private options: NotificationActionOptions) {}
-  send() {
+  send(message: string) {
     if (this.options.type === "wecom") {
-      this.wecomNotice(this.options.botKey, this.options.message);
+      this.wecomNotice(this.options.botKey, message);
     } else {
       console.error("Unsupported notification type");
     }
