@@ -1,0 +1,36 @@
+{
+  "name": "notikit",
+  "version": "0.0.1",
+  "description": "A toolkit for note management and generation",
+  "main": "dist/notikit.umd.js",
+  "module": "dist/notikit.es.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "notikit": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "vite build && tsup"
+  },
+  "keywords": ["note-taking", "productivity", "toolkit"],
+  "author": "Alioth",
+  "license": "ISC",
+  "files": [
+    "dist/**/*",
+    "!dist/**/*.map",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.13"
+  }
+}
