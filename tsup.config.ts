@@ -5,7 +5,7 @@ export default defineConfig({
   format: ['cjs'],
   target: 'node14',
   outDir: 'dist',
-  clean: true,
+  clean: false,
   dts: false,
   banner: {
     js: '#!/usr/bin/env node'

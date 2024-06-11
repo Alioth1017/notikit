@@ -9,9 +9,14 @@
     "notikit": "dist/cli.js"
   },
   "scripts": {
-    "build": "vite build && tsup"
+    "build": "vite build && tsup",
+    "prepublishOnly": "npm run build && np --no-cleanup --yolo --no-publish --any-branch"
   },
-  "keywords": ["note-taking", "productivity", "toolkit"],
+  "keywords": [
+    "note-taking",
+    "productivity",
+    "toolkit"
+  ],
   "author": "Alioth",
   "license": "ISC",
   "files": [
@@ -25,10 +30,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "commander": "^12.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
+    "np": "^10.0.5",
     "tsup": "^8.1.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.13"
