@@ -3,11 +3,11 @@ import { AbstractNotification, NoticeType } from "./base";
 
 // 实现WecomNotification类
 export class WebhookNotification extends AbstractNotification {
-  async send(message: string): Promise<void> {
+  async send(message: string): Promise<boolean> {
     const options = this.options;
 
     if (options.type !== NoticeType.WEBHOOK) {
-      return;
+      return false;
     }
 
     try {
@@ -21,8 +21,10 @@ export class WebhookNotification extends AbstractNotification {
         data: getData(message),
       });
       console.log("Notification sent successfully:", response.data);
+      return true;
     } catch (error) {
       console.error("Failed to send notification:", error);
+      return false;
     }
   }
 }

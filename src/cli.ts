@@ -18,8 +18,8 @@ program
     "-m, --message <message>",
     "Content of the notification message"
   )
-  .action((options: NotificationActionCommandOptions) => {
-    new NotificationAction(options).send(options.message);
+  .action(async (options: NotificationActionCommandOptions) => {
+    await new NotificationAction(options).send(options.message);
   });
 
 program.parse(process.argv);
