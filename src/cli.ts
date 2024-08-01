@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import { NotificationAction, NotificationActionOptions } from "./index";
+const pkg = require("../package.json");
 const program = new Command();
 
 type NotificationActionCommandOptions = NotificationActionOptions & {
@@ -7,7 +8,7 @@ type NotificationActionCommandOptions = NotificationActionOptions & {
 };
 
 program
-  .version("0.1.0")
+.version(pkg.version)
   .description("NotiKit CLI - A command line tool for sending notifications")
   .requiredOption(
     "-t, --type <type>",
