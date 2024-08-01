@@ -1,6 +1,6 @@
 {
   "name": "notikit",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A toolkit for note management and generation",
   "main": "dist/notikit.umd.js",
   "module": "dist/notikit.es.js",
