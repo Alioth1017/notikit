@@ -3,7 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import babel from '@rollup/plugin-babel';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 
 export default {
   input: 'src/index.ts',
@@ -27,19 +27,8 @@ export default {
     typescript(),
     babel({
       babelHelpers: 'runtime',
-      extensions: ['.js', '.ts'],
-      presets: [
-        '@babel/preset-env',
-        '@babel/preset-typescript'
-      ],
-      plugins: [
-        '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-private-methods',
-        '@babel/plugin-transform-classes',
-        '@babel/plugin-transform-runtime'
-      ]
+      plugins: ['@babel/plugin-transform-runtime'],
     }),
-    terser()
+    terser(),
   ],
-  external: ['@babel/runtime']
 };
